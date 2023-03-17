@@ -3,9 +3,10 @@ import os
 import pkg_resources
 import yaml
 
-DATA_PATH = pkg_resources.resource_filename(
-    "{{ cookiecutter.repo_name }}", 'config')
-pkg_yaml = os.path.join(DATA_PATH, 'config.yml')
+base_path = os.path.dirname(os.path.dirname(
+    pkg_resources.resource_filename("{{ cookiecutter.package_name }}", 'config')))
+
+pkg_yaml = os.path.join(base_path, 'config', 'config.yml')
 
 
 def load_pkg_yaml(yaml=pkg_yaml, **kwargs):
@@ -21,7 +22,7 @@ def load_pkg_yaml(yaml=pkg_yaml, **kwargs):
     with open(pkg_yaml, 'r') as f:
         y = yaml.safe_load(f)
 
-    if subdict in kwargs.keys():
-        return y[kwargs[subdict]]
+    if 'subdict' in kwargs.keys():
+        return y[kwargs['subdict']]
     else:
         return y

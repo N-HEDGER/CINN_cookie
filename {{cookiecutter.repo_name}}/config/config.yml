@@ -1,5 +1,4 @@
 paths:
-  data: '{{ cookiecutter.repo_name }}/results'
 
 preprocessing:
 
