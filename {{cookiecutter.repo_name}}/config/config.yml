@@ -1,6 +1,6 @@
 paths:
-  data: '{path}/results'
-  
+  data: '{{ cookiecutter.repo_name }}/results'
+
 preprocessing:
 
 analysis:

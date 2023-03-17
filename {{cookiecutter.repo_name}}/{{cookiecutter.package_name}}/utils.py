@@ -4,7 +4,7 @@ import pkg_resources
 import yaml
 
 DATA_PATH = pkg_resources.resource_filename(
-    "{{ cookiecutter.package_name }}", 'config')
+    "{{ cookiecutter.repo_name }}", 'config')
 pkg_yaml = os.path.join(DATA_PATH, 'config.yml')
 
 
