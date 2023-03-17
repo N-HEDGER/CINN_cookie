@@ -1,10 +1,30 @@
+
+
+# Here we would define external paths for the project. Those that point to an atlas, for instance.
 paths:
+  atlaspath: 'Documents/atlases/'
 
+# Here we would define preprocessing parameters. e.g. filter parameters.
 preprocessing:
+  zscore_data: True
+  filter_data: True
+  filter_params:
+    window_length: 201
+    polyorder: 3
 
+# Here we would define analysis parameters. e.g. subjects to fit, rois to fit, number of jobs, model backends.
 analysis:
+  subjects_to_analyse: ['01' , '02' , '03' , '04']
+  ROIS: ['V1','V2','V3']
+  njobs: 60
+  backend_engine: 'torch'
 
+# Here we would define plotting parameters. e.g. sizes of figures, dpi etc.
 plotting:
+  figsize_x: 6
+  figsize_y: 4
+  dpi: 300
+
 
 
 

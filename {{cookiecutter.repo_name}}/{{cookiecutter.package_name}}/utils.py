@@ -30,6 +30,8 @@ def load_pkg_yaml(pkg_yaml=pkg_yaml, **kwargs):
 
     with open(pkg_yaml, 'r') as f:
         y = yaml.safe_load(f)
+
+        # Add the paths to the config dict
         y['p_paths'] = p_paths
 
     if 'subdict' in kwargs.keys():
