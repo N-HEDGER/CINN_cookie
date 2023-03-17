@@ -22,10 +22,10 @@ def load_pkg_yaml(pkg_yaml=pkg_yaml, **kwargs):
     """_summary_
 
     Args:
-        pkg_yaml (_type_, optional): _description_. Defaults to pkg_yaml.
+        pkg_yaml (_type_, optional): The path to the package config yaml. Defaults to pkg_yaml.
 
     Returns:
-        _type_: _description_
+        A dictionry containing the information in the package config file.
     """
 
     with open(pkg_yaml, 'r') as f:
