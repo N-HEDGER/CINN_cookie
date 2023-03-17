@@ -6,7 +6,7 @@ DATA_PATH = pkg_resources.resource_filename(
 pkg_yaml = os.path.join(DATA_PATH, 'config.yml')
 
 
-def load_pkg_yaml(yaml=pkg_yaml):
+def load_pkg_yaml(yaml=pkg_yaml, **kwargs):
     """_summary_
 
     Args:
@@ -18,4 +18,8 @@ def load_pkg_yaml(yaml=pkg_yaml):
 
     with open(pkg_yaml, 'r') as f:
         y = yaml.safe_load(f)
-    return y
+
+    if subdict in kwargs.keys():
+        return y[kwargs[subdict]]
+    else:
+        return y
